@@ -121,6 +121,12 @@
             ctx.fillStyle = "#44d6ff";
             ctx.fillRect(i, 22, 5, 16);
         }
+        // Debounced resize redraw for line test
+        let resizeTO;
+        window.addEventListener("resize", () => {
+            clearTimeout(resizeTO);
+            resizeTO = setTimeout(drawHiDPILines, 150);
+        });
     }
 
     // Touch Page Logic

@@ -13,11 +13,11 @@ Vanilla HTML/CSS/JS demo page used at Global Fintech Festival 2025 to quickly ve
 
 ## Files
 
--   `index.html` – Main test hub inside iPhone mock (`iphonemock.png`).
+-   `index.html` – Main test hub (phone frame removed; now fluid layout).
 -   `touch-test.html` – Dedicated multi‑touch capture page.
 -   `styles.css` – Layout + visual test styles / animations.
 -   `scripts.js` – All interactive logic.
--   `iphonemock.png` – Device frame graphic (provided in repository root).
+<!-- Optional earlier asset `iphonemock.png` removed from usage; can be deleted if not needed. -->
 
 ## Quick Use
 
