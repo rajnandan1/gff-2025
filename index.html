@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,viewport-fit=cover"
+        />
+        <title>GFF 2025 – Cashfree Display Test</title>
+        <meta
+            name="description"
+            content="Display capability test demo for Cashfree at Global Fintech Festival 2025"
+        />
+        <link rel="preload" as="image" href="iphonemock.png" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="device-shell">
+            <div
+                class="app-screen"
+                role="main"
+                aria-label="GFF 2025 Cashfree Test App"
+            >
+                <header class="app-header">
+                    <img class="logo" src="cflogo.png" alt="Cashfree Logo" />
+                    <h1>GFF 2025 Display + Input Test</h1>
+                    <p class="subtitle">
+                        Cashfree demo – verify JS, navigation, colors, motion,
+                        touch
+                    </p>
+                </header>
+
+                <section class="line-test" aria-label="HiDPI Line Sharpness">
+                    <h2 class="visually-hidden">Line Sharpness Test</h2>
+                    <canvas
+                        id="lineTest"
+                        height="40"
+                        aria-hidden="true"
+                    ></canvas>
+                </section>
+
+                <section
+                    class="primary-tests"
+                    aria-label="Primary test buttons"
+                >
+                    <button id="jsTestBtn" class="btn primary" type="button">
+                        JS Action Test
+                    </button>
+                    <button
+                        id="redirectBtn"
+                        class="btn secondary"
+                        type="button"
+                        data-target="touch-test.html"
+                    >
+                        Go To Multi‑Touch Page →
+                    </button>
+                    <div
+                        id="jsTestResult"
+                        class="result"
+                        aria-live="polite"
+                    ></div>
+                </section>
+
+                <section class="color-grid" aria-label="Color rendering test">
+                    <h2>Color / Gradient / Contrast</h2>
+                    <div
+                        class="swatches"
+                        id="colorSwatches"
+                        aria-hidden="false"
+                    >
+                        <!-- Solid colors -->
+                        <div
+                            class="swatch solid red"
+                            data-name="Red #FF0000"
+                        ></div>
+                        <div
+                            class="swatch solid green"
+                            data-name="Green #00FF00"
+                        ></div>
+                        <div
+                            class="swatch solid blue"
+                            data-name="Blue #0000FF"
+                        ></div>
+                        <div
+                            class="swatch solid white"
+                            data-name="White #FFFFFF"
+                        ></div>
+                        <div
+                            class="swatch solid black"
+                            data-name="Black #000000"
+                        ></div>
+                        <div
+                            class="swatch solid gray"
+                            data-name="Gray #808080"
+                        ></div>
+                        <div
+                            class="swatch solid cyan"
+                            data-name="Cyan #00FFFF"
+                        ></div>
+                        <div
+                            class="swatch solid magenta"
+                            data-name="Magenta #FF00FF"
+                        ></div>
+                        <div
+                            class="swatch solid yellow"
+                            data-name="Yellow #FFFF00"
+                        ></div>
+                        <!-- Gradients -->
+                        <div
+                            class="swatch gradient g1"
+                            data-name="RGB Gradient"
+                        ></div>
+                        <div
+                            class="swatch gradient g2"
+                            data-name="Diagonal Smooth"
+                        ></div>
+                        <div
+                            class="swatch gradient g3"
+                            data-name="Radial"
+                        ></div>
+                    </div>
+                    <div class="contrast-bars">
+                        <div class="bar checker fine"></div>
+                        <div class="bar checker medium"></div>
+                        <div class="bar checker coarse"></div>
+                    </div>
+                </section>
+
+                <section
+                    class="motion-tests"
+                    aria-label="Motion & frame pacing tests"
+                >
+                    <h2>Motion & Frame Test</h2>
+                    <div class="motion-area">
+                        <div
+                            class="ball"
+                            id="animBall"
+                            aria-hidden="true"
+                        ></div>
+                        <div class="bars" id="scanBars" aria-hidden="true">
+                            <div class="bar b1"></div>
+                            <div class="bar b2"></div>
+                            <div class="bar b3"></div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button id="toggleMotion" class="btn small">
+                            Toggle Motion
+                        </button>
+                        <button id="changeBg" class="btn small">
+                            Cycle BG
+                        </button>
+                        <span
+                            id="fps"
+                            class="metric"
+                            aria-live="polite"
+                            title="Approximate frames per second"
+                            >FPS: --</span
+                        >
+                    </div>
+                </section>
+
+                <section class="instruction" aria-label="Instructions">
+                    <h2>How to Use</h2>
+                    <ol>
+                        <li>
+                            Tap JS Action Test – counter & timestamp should
+                            appear.
+                        </li>
+                        <li>
+                            Tap Go To Multi‑Touch Page to verify navigation &
+                            open second page.
+                        </li>
+                        <li>
+                            Inspect color blocks & gradients for banding, tint,
+                            uniformity.
+                        </li>
+                        <li>
+                            Toggle Motion; observe smoothness, persistence,
+                            artifacts.
+                        </li>
+                        <li>
+                            Cycle BG to test brightness adaptation & contrast.
+                        </li>
+                    </ol>
+                </section>
+
+                <footer class="app-footer">© 2025 Cashfree (Demo) • GFF</footer>
+            </div>
+        </div>
+        <script src="scripts.js" defer></script>
+    </body>
+</html>

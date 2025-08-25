@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,viewport-fit=cover"
+        />
+        <title>Multi‑Touch Test – GFF 2025</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body class="touch-page">
+        <div class="device-shell">
+            <div class="app-screen">
+                <header class="app-header small">
+                    <h1>Multi‑Touch Test</h1>
+                    <p>
+                        Use 1–10 fingers. Visual dots & paths appear. Pressure
+                        (if supported) shown. Tap back when done.
+                    </p>
+                </header>
+
+                <section class="touch-area-wrapper">
+                    <div
+                        id="touchArea"
+                        class="touch-area"
+                        aria-label="Touch capture area"
+                        tabindex="0"
+                    >
+                        <div class="placeholder">Touch Here</div>
+                    </div>
+                    <aside class="touch-stats" aria-live="polite">
+                        <div>
+                            <strong>Active:</strong>
+                            <span id="activeCount">0</span>
+                        </div>
+                        <div>
+                            <strong>Total Since Load:</strong>
+                            <span id="totalTouches">0</span>
+                        </div>
+                        <div>
+                            <strong>Max Concurrent:</strong>
+                            <span id="maxConcurrent">0</span>
+                        </div>
+                        <div>
+                            <strong>Last Event:</strong>
+                            <span id="lastEvent">--</span>
+                        </div>
+                        <div class="pressure-list" id="pressureList"></div>
+                    </aside>
+                </section>
+
+                <section class="gesture-log">
+                    <h2>Recent Gestures</h2>
+                    <ul id="gestureLog"></ul>
+                </section>
+
+                <footer class="app-footer">
+                    <button class="btn small" onclick="history.back()">
+                        ← Back
+                    </button>
+                    <a class="btn small" href="index.html">Home</a>
+                </footer>
+            </div>
+        </div>
+        <script src="scripts.js" defer></script>
+    </body>
+</html>
